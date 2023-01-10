@@ -5,9 +5,9 @@ require('dotenv').config()
 const app = express();
 const PORT = process.env.PORT || 5001;
 const cors = require('cors')
-const connectDB = require('./config/dbConn')
+const connectDB = require('./config/dbConn.js')
 const mongoose = require('mongoose')
-const allowedOrigins = require('./config/allowedOrigins')
+const allowedOrigins = require('./config/allowedOrigins.js')
 
 mongoose.set('strictQuery', true);
 
@@ -25,9 +25,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 //endpoints
-app.use('/users', require('./routes/userRoutes'))
-app.use('/auth', require('./routes/authRoutes'))
-app.use('/messages', require('./routes/messagesRoutes'))
+app.use('/users', require('./routes/userRoutes.js'))
+app.use('/auth', require('./routes/authRoutes.js'))
+app.use('/messages', require('./routes/messagesRoutes.js'))
 
 // wrong endpoints 
 app.all('*', (req, res) => {
