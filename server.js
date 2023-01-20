@@ -28,6 +28,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/users', require('./routes/userRoutes.js'))
 app.use('/auth', require('./routes/authRoutes.js'))
 app.use('/messages', require('./routes/messagesRoutes.js'))
+app.use('/post', require('./routes/postRoutes'))
 
 // wrong endpoints 
 app.all('*', (req, res) => {
