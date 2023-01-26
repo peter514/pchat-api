@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 
 
 const login = async (req, res) => {
+  console.log("Login Attempt...")
   const { userName, password } = req.body;
 
   if (!userName || !password) {
